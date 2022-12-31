@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "aksclustersample-f6bd"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "aksclustersample-f6bd"
+  template:
+    metadata:
+      labels:
+        app: "aksclustersample-f6bd"
+    spec:
+      containers:
+        - name: "aksclustersample-f6bd"
+          image: "votingacrsample123.azurecr.io/aksclustersample"
+          ports:
+          - containerPort: 80
